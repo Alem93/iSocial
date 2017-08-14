@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,107 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vns-N4-0oQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alem" translatesAutoresizingMaskIntoConstraints="NO" id="hqk-5j-PDv">
+                                        <rect key="frame" x="123" y="29.5" width="128" height="71"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.24705882352941178" green="0.31764705882352939" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="hqk-5j-PDv" firstAttribute="centerX" secondItem="Vns-N4-0oQ" secondAttribute="centerX" id="CHK-aZ-3lH"/>
+                                    <constraint firstAttribute="height" constant="130" id="RhV-4H-zrt"/>
+                                    <constraint firstItem="hqk-5j-PDv" firstAttribute="centerY" secondItem="Vns-N4-0oQ" secondAttribute="centerY" id="h1T-by-QHm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPR-VX-fL4">
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't sign in before, an account will be automatically created for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzi-em-Cy0">
+                                        <rect key="frame" x="8" y="8" width="359" height="49"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.15686274509803921" green="0.20784313725490194" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Nzi-em-Cy0" firstAttribute="leading" secondItem="sPR-VX-fL4" secondAttribute="leading" constant="8" id="L38-50-JeR"/>
+                                    <constraint firstItem="Nzi-em-Cy0" firstAttribute="top" secondItem="sPR-VX-fL4" secondAttribute="top" constant="8" id="QZn-XB-F5x"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nzi-em-Cy0" secondAttribute="trailing" constant="8" id="Uw5-4t-Aeb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nzi-em-Cy0" secondAttribute="bottom" constant="8" id="aWn-1x-HYW"/>
+                                    <constraint firstAttribute="height" constant="65" id="xMg-Jr-363"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2m-3O-yyY">
+                                <rect key="frame" x="16" y="148" width="343" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34j-7z-llX">
+                                <rect key="frame" x="112" y="203.5" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.25490196078431371" green="0.36078431372549019" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="W8T-vk-SeX"/>
+                                    <constraint firstAttribute="width" constant="150" id="nII-5v-g1z"/>
+                                </constraints>
+                                <state key="normal" image="f"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vfI-YR-c7l">
+                                <rect key="frame" x="46" y="383.5" width="283" height="123"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Swd-7Q-WU8">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="30"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ot6-S3-agH">
+                                        <rect key="frame" x="0.0" y="45" width="283" height="30"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rj1-zz-hO5">
+                                        <rect key="frame" x="0.0" y="90" width="283" height="33"/>
+                                        <color key="backgroundColor" red="1" green="0.41117122769355774" blue="0.39765471220016479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sPR-VX-fL4" secondAttribute="trailing" id="1Ok-pP-8eh"/>
+                            <constraint firstItem="Vns-N4-0oQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3h2-nb-smt"/>
+                            <constraint firstItem="v2m-3O-yyY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7sj-iG-AU2"/>
+                            <constraint firstItem="v2m-3O-yyY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HKq-yh-zjL"/>
+                            <constraint firstItem="34j-7z-llX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SbP-9z-3gF"/>
+                            <constraint firstItem="vfI-YR-c7l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="X4x-Tx-PGL"/>
+                            <constraint firstItem="v2m-3O-yyY" firstAttribute="top" secondItem="Vns-N4-0oQ" secondAttribute="bottom" constant="18" id="Xda-yf-qnC"/>
+                            <constraint firstAttribute="trailing" secondItem="Vns-N4-0oQ" secondAttribute="trailing" id="atx-PY-7RM"/>
+                            <constraint firstItem="34j-7z-llX" firstAttribute="top" secondItem="v2m-3O-yyY" secondAttribute="bottom" constant="30" id="hNN-eU-Lk2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vfI-YR-c7l" secondAttribute="trailing" constant="30" id="nmn-0a-2DM"/>
+                            <constraint firstItem="Vns-N4-0oQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qfF-O0-aAH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sPR-VX-fL4" secondAttribute="bottom" id="wgq-Za-aTx"/>
+                            <constraint firstItem="sPR-VX-fL4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zOS-Hn-vam"/>
+                            <constraint firstItem="vfI-YR-c7l" firstAttribute="top" secondItem="34j-7z-llX" secondAttribute="bottom" constant="30" id="zc6-aK-IKf"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="34.632683658170919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Alem" width="128" height="71"/>
+        <image name="f" width="352" height="328"/>
+    </resources>
 </document>
