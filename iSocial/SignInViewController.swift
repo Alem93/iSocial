@@ -22,6 +22,12 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.defaultKeychainWrapper.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
+    }
 
 
     @IBAction func facebookButtonPressed(_ sender: Any) {
@@ -47,7 +53,7 @@ class SignInViewController: UIViewController {
             } else {
                 print("Message: Successfully authenticated with Firebase")
                 if let user = user {
-                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(id: user.uid)
                 }
             }
         })
@@ -58,12 +64,19 @@ class SignInViewController: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("Message: Email user authenticated with Firebase")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {(user, error) in
                         if error != nil {
                             print("Message: unable to authenticate with Firebase")
                         } else {
                             print("Message: Succesfully authenticated with Firebase")
+                            if let user = user {
+                                self.completeSignIn(id: user.uid)
+                            }
+                            
                         }
                     })
                 }
@@ -71,6 +84,10 @@ class SignInViewController: UIViewController {
         }
     }
     
+    func completeSignIn(id: String) {
+        KeychainWrapper.defaultKeychainWrapper.set(id, forKey: KEY_UID)
+        performSegue(withIdentifier: "goToFeed", sender: nil)
+    }
     
 }
 
