@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6C820DAE32EBE65C37AF566D /* Pods_iSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860135513327CAA5656258FD /* Pods_iSocial.framework */; };
 		8D42A4001F48793000251418 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42A3FF1F48793000251418 /* CircleImageView.swift */; };
+		8D42A4021F48BA0200251418 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42A4011F48BA0200251418 /* PostTableViewCell.swift */; };
 		8D43B14C1F47720C007C5BF2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43B14B1F47720C007C5BF2 /* FeedViewController.swift */; };
 		8D5204C21F41CD350055B1B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5204C11F41CD350055B1B7 /* AppDelegate.swift */; };
 		8D5204C41F41CD350055B1B7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5204C31F41CD350055B1B7 /* SignInViewController.swift */; };
@@ -41,6 +42,7 @@
 		75B57B32F6184B316777834D /* Pods_iSocialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iSocialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860135513327CAA5656258FD /* Pods_iSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D42A3FF1F48793000251418 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		8D42A4011F48BA0200251418 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8D43B14B1F47720C007C5BF2 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8D5204BE1F41CD350055B1B7 /* iSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5204C11F41CD350055B1B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				8D5204EE1F4282C70055B1B7 /* FancyTextField.swift */,
 				8D5204F01F42855F0055B1B7 /* FancyButton.swift */,
 				8D42A3FF1F48793000251418 /* CircleImageView.swift */,
+				8D42A4011F48BA0200251418 /* PostTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				8D5204F11F42855F0055B1B7 /* FancyButton.swift in Sources */,
 				8D5204EF1F4282C70055B1B7 /* FancyTextField.swift in Sources */,
 				8D5204E81F4271750055B1B7 /* FancyView.swift in Sources */,
+				8D42A4021F48BA0200251418 /* PostTableViewCell.swift in Sources */,
 				8D43B14C1F47720C007C5BF2 /* FeedViewController.swift in Sources */,
 				8D5204EB1F4273110055B1B7 /* Constants.swift in Sources */,
 			);
