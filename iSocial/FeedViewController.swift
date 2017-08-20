@@ -18,6 +18,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        DataService.ds.REF_POSTS.observe(.value, with: {(snapchat) in
+            print(snapchat.value!)
+        })
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
