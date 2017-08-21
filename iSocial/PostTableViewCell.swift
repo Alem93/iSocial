@@ -27,5 +27,10 @@ class PostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configureCell(post: Post){
+        self.likesLbl.text = "Likes \(post.likes)"
+        self.caption.text = post.caption
+    }
 
 }

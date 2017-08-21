@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C820DAE32EBE65C37AF566D /* Pods_iSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860135513327CAA5656258FD /* Pods_iSocial.framework */; };
+		8D2905CA1F49C65100B29175 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2905C91F49C65100B29175 /* Post.swift */; };
 		8D42A4001F48793000251418 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42A3FF1F48793000251418 /* CircleImageView.swift */; };
 		8D42A4021F48BA0200251418 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42A4011F48BA0200251418 /* PostTableViewCell.swift */; };
 		8D42A4051F490D8600251418 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42A4041F490D8600251418 /* DataService.swift */; };
@@ -42,6 +43,7 @@
 		4B9B2EA611DF19965E787816 /* Pods-iSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iSocial/Pods-iSocial.debug.xcconfig"; sourceTree = "<group>"; };
 		75B57B32F6184B316777834D /* Pods_iSocialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iSocialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860135513327CAA5656258FD /* Pods_iSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D2905C91F49C65100B29175 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8D42A3FF1F48793000251418 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		8D42A4011F48BA0200251418 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8D42A4041F490D8600251418 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		8D5204E61F41CE280055B1B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8D2905C91F49C65100B29175 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				8D5204C41F41CD350055B1B7 /* SignInViewController.swift in Sources */,
 				8D42A4001F48793000251418 /* CircleImageView.swift in Sources */,
 				8D5204ED1F427D460055B1B7 /* RoundButton.swift in Sources */,
+				8D2905CA1F49C65100B29175 /* Post.swift in Sources */,
 				8D5204C21F41CD350055B1B7 /* AppDelegate.swift in Sources */,
 				8D5204F11F42855F0055B1B7 /* FancyButton.swift in Sources */,
 				8D42A4051F490D8600251418 /* DataService.swift in Sources */,
