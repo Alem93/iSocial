@@ -15,7 +15,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var posts = [Post]()
     private var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    private var imageSelected = false
     
+    @IBOutlet weak var captionField: FancyTextField!
     @IBOutlet weak var imageAdd: CircleImageView!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -69,11 +71,35 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
             imageAdd.image = image
+            imageSelected = true
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
     @IBAction func addImageTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
+    }
+    @IBAction func postButtonTapped(_ sender: Any) {
+        guard let caption = captionField.text, caption != "" else {
+            return
+        }
+        guard let img = imageAdd.image, imageSelected == true else {
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 2.0) {
+            let imgUid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) {(metadata,error) in if error == nil {
+                let downloadUrl = metadata?.downloadURL()?.absoluteString
+                }
+            }
+            
+            self.imageSelected = false
+            self.captionField.text = ""
+            self.imageAdd.image = UIImage(named: "add-image")
+        }
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
