@@ -20,6 +20,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var captionField: FancyTextField!
     @IBOutlet weak var imageAdd: CircleImageView!
     @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +33,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.delegate = self
         
         DataService.ds.REF_POSTS.observe(.value, with: {(snapshot) in
+            
+            self.posts = []
+            
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     if let postDict = snap.value as? Dictionary<String, Any>{
@@ -40,6 +45,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     }
                 }
             }
+            self.posts.reverse()
             self.tableView.reloadData()
         })
     }
@@ -58,11 +64,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostTableViewCell {
             if let img = FeedViewController.imageCache.object(forKey: post.imageUrl as NSString){
                 cell.configureCell(post: post, img: img)
-                return cell
             } else {
                 cell.configureCell(post: post)
-                return cell
             }
+            return cell
         } else {
             return PostTableViewCell()
         }
@@ -92,14 +97,30 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             metadata.contentType = "image/jpeg"
             
             DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) {(metadata,error) in if error == nil {
-                let downloadUrl = metadata?.downloadURL()?.absoluteString
+                if let downloadUrl = metadata?.downloadURL()?.absoluteString {
+                    self.postToFirebase(imageUrl: downloadUrl)
+                }
                 }
             }
-            
-            self.imageSelected = false
-            self.captionField.text = ""
-            self.imageAdd.image = UIImage(named: "add-image")
         }
+    }
+    
+    func postToFirebase(imageUrl: String){
+        let post: Dictionary<String, Any> = [
+            "caption": captionField.text!,
+            "imageUrl": imageUrl,
+            "likes": 0
+        ]
+        
+        let fireBasePost = DataService.ds.REF_POSTS.childByAutoId()
+        fireBasePost.setValue(post)
+        
+        self.imageSelected = false
+        self.captionField.text = ""
+        self.imageAdd.image = UIImage(named: "add-image")
+        
+        
+        tableView.reloadData()
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
